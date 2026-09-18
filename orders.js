@@ -16,11 +16,12 @@ function cancelOrder(order) {
 }
 
 function calculateLoyaltyPoints(order) {
+  const basePoints = Math.floor(order.total / 10);
+
   if(order.total > 100) {
-    const points = Math.round(order.total / 10);
-    return points * 1.5;
+    return basePoints * 1.5;
   } else {
-    return Math.round(order.total / 10);
+    return basePoints;
   }
 }
 
